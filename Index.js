@@ -1,18 +1,18 @@
+// Import express
 const express = require("express");
-const app = express();
 const path = require("path");
+const app = express();
+const PORT = process.env.PORT || 10000;
 
-app.use(express.static("public"));
+// Serve static files from current directory
+app.use(express.static(path.join(__dirname)));
 
+// Default route
 app.get("/", (req, res) => {
-  res.send("Spectra Prime Bridge is Live.");
+  res.sendFile(path.join(__dirname, "ghostforge.html"));
 });
 
-app.get("/GhostForge", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "ghostforge.html"));
-});
-
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+// Start server
+app.listen(PORT, () => {
+  console.log(`✅ Spectra is live at http://localhost:${PORT}`);
 });
