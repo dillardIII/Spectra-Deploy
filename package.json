@@ -1,0 +1,12 @@
+{
+  "name": "spectra-deploy",
+  "version": "1.0.0",
+  "description": "Spectra Prime AI Deployment Bridge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
